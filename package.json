@@ -1,0 +1,26 @@
+{
+  "name": "prerender-bwlist",
+  "version": "0.0.1",
+  "description": "prerender plugin for easy file-based configuration of black- and whitelisting hosts",
+  "author": {
+    "name": "David Simon"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/d-simon/prerender-bwlist"
+  },
+  "keywords": [
+    "prerender",
+    "blacklist",
+    "whitelist"
+  ],
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/d-simon/prerender-bwlist/issues"
+  },
+  "homepage": "https://github.com/d-simon/prerender-bwlist",
+  "_id": "prerender-bwlist@0.0.1",
+  "_from": "prerender-bwlist@"
+}

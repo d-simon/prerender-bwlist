@@ -1,0 +1,10 @@
+{
+    "whitelist": {
+        "enabled": true,
+        "list": ["google.com", "www.google.com"]
+    },
+    "blacklist": {
+        "enabled": false,
+        "list": []
+    }
+}
