@@ -1,6 +1,6 @@
 var url = require("url")
   , fs = require("fs")
-  , fileUrl = './bwlist.json';
+  , fileUrl = process.env.BWLIST_CONF || './bwlist.json';
 
 module.exports = {
     getJSONLists: function () {
