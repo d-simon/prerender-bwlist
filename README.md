@@ -23,3 +23,6 @@ Create a *bwlist.json* from *bwlist.sample.json* for example like so
             "list": []
         }
     }
+
+Alternatively specify a different location for your bwlist.json
+    BWLIST_CONF='/path/to/bwlist.json'
