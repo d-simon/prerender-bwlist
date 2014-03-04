@@ -10,9 +10,9 @@ var server = prerender({
 });
 
 // Either specify a folder path
-// bwlist.setConf(__dirname + '/prerender-bwlist/bwlist.sample.json');
+bwlist.setConf(__dirname + '/bwlist.json');
 
-// Or set the config directly
+// Or set the config directly (this will overwrite the previous bit!)
 bwlist.setConf({
     "whitelist": {
         "enabled": true,
