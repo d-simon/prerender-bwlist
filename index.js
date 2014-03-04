@@ -36,7 +36,7 @@ module.exports = {
         if (this.fileUrl) {
             this.getJSONLists();
             fs.watchFile(this.fileUrl, { persistent: true }, this.getJSONLists);
-        } else if (this.confObj)  {
+        } else if (this.confObj) {
             this.confObj = extend(true, defaultConf, this.confObj);
             this.setFromConfig();
         }
@@ -50,17 +50,17 @@ module.exports = {
         } else {
             next();
         }
-
     },
     getJSONLists: function () {
-        // We're using module.exports, since the fs.watchFile-
-        // callback (getJSONLists) loses it's context.
+        // We're using module.exports, since the fs.watchFile-callback (getJSONLists)
+        // loses it's context with "this".
         var that = module.exports;
 
         // Add the rest from bwlist.json
         fs.readFile(that.fileUrl, 'utf8', function callback (err, data) {
-            var list = (data) ? JSON.parse(data) || null : null;
-            if (!err && list) {
+            var conf = (data) ? JSON.parse(data) || null : null;
+            if (!err && conf) {
+                that.confObj = conf;
                 that.setFromConfig();
             } else {
                 console.log('No or empty bwlist.json');
