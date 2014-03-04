@@ -1,7 +1,7 @@
 {
     "whitelist": {
         "enabled": true,
-        "list": ["google.com", "www.google.com"]
+        "list": ["google.ch", "www.google.ch"]
     },
     "blacklist": {
         "enabled": false,

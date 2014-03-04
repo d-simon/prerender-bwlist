@@ -22,5 +22,8 @@
   },
   "homepage": "https://github.com/d-simon/prerender-bwlist",
   "_id": "prerender-bwlist@0.0.1",
-  "_from": "prerender-bwlist@"
+  "_from": "prerender-bwlist@",
+  "dependencies": {
+    "extend": "~1.2.1"
+  }
 }
