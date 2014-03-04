@@ -15,7 +15,7 @@ Easy and comfortable Black-/Whitelisting configuration plugin for [Prerender Ser
 You can set the config directly inside your prerender server.
 ```javascript
 var prerender = require('prerender')
-  , bwlist = require('../index.js');
+  , bwlist = require('prerender-bwlist');
 
 var server = prerender({
     workers: process.env.PHANTOM_CLUSTER_NUM_WORKERS,
