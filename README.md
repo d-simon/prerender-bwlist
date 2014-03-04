@@ -1,13 +1,13 @@
 Prerender Black/Whitelist Plugin
 ================================
 
-Easy and comfortable Black-/Whitelisting configuration plugin for [Prerender server](http://www.prerender.io/server) (from [prerender.io](http://www.prerender.io)). Configuration can be set through a json file or directly from within your prerender server.
+Easy and comfortable Black-/Whitelisting configuration plugin for [Prerender Service](http://www.prerender.io/server) (from [prerender.io](http://www.prerender.io)). Configuration can be set through a json file or directly from within your prerender server.
 
 ## Usage
 
-    var bwlist = require('./bwlist');
+    var bwlist = require('prerender-bwlist');
     server.use(bwlist);
-    
+
 ## Configuration
 
 ### Inline
@@ -17,6 +17,14 @@ You can set the config directly inside your prerender server.
 var prerender = require('prerender')
   , bwlist = require('../index.js');
 
+var server = prerender({
+    workers: process.env.PHANTOM_CLUSTER_NUM_WORKERS,
+    iterations: process.env.PHANTOM_WORKER_ITERATIONS || 10,
+    phantomArguments: ["--load-images=false", "--ignore-ssl-errors=true"],
+    phantomBasePort: process.env.PHANTOM_CLUSTER_BASE_PORT,
+    messageTimeout: process.env.PHANTOM_CLUSTER_MESSAGE_TIMEOUT
+});
+
 // Either specify a folder path
 bwlist.setConf(__dirname + '/prerender-bwlist/bwlist.sample.json');
 
@@ -25,8 +33,8 @@ bwlist.setConf({
     "whitelist": {
         "enabled": true,
         "list": [
-            "google.com",
-            "www.google.com"
+            "google.ch",
+            "www.google.ch"
         ]
     },
     "blacklist": {
@@ -35,6 +43,7 @@ bwlist.setConf({
     }
 });
 
+// Finally tell Prerender to use the configured plugin
 server.use(bwlist);
 server.start();
 ```
@@ -58,6 +67,6 @@ Create a *bwlist.json* from *bwlist.sample.json* in your app's root folder
 ```
 Alternatively specify a different location for your bwlist.json through an environment variable 
 ```bash
-BWLIST_CONF='/ path/to/bwlist.json'
+BWLIST_CONF=/path/to/bwlist.json
 ```
 or inline with `bwlist.setConf`
