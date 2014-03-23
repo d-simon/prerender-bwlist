@@ -3,6 +3,8 @@ Prerender Black/Whitelist Plugin
 
 Easy and comfortable Black-/Whitelisting configuration plugin for [Prerender Service](http://www.prerender.io/server) (from [prerender.io](http://www.prerender.io)). Configuration can be set through a json file or directly from within your prerender server.
 
+[![Code Climate](https://codeclimate.com/github/d-simon/prerender-bwlist.png)](https://codeclimate.com/github/d-simon/prerender-bwlist)
+
 ## Usage
 
     var bwlist = require('prerender-bwlist');
