@@ -43,7 +43,7 @@ module.exports = {
     },
     beforePhantomRequest: function (req, res, next) {
         var parsed = url.parse(req.prerender.url);
-        if (this.ENABLED_BLACKLIST && -1 !== this.BLACKLISTED_DOMAINS.indexOf(parsed.hostname)) {
+        if (this.ENABLED_BLACKLIST && -1 !== this.BLACKLISTED_DOMAINS.indexOf(parsed.hostname)) {
             res.send(404);
         } else if (this.ENABLED_WHITELIST && -1 === this.ALLOWED_DOMAINS.indexOf(parsed.hostname)) {
             res.send(404);
